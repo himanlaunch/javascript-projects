@@ -38,11 +38,11 @@ if(preparedForLiftOff){
     console.log(date);
     console.log(time);
     console.log(astronautCount);
-    console.log(crewMassKg);
-    console.log(fuelMassKg);
-    console.log(shuttleMassKg);
-    console.log(totalMassKg);
-    console.log(fuelTempCelsius);
+    console.log(crewMassKg, "kg");
+    console.log(fuelMassKg, "kg");
+    console.log(shuttleMassKg, "kg");
+    console.log(totalMassKg, "kg");
+    console.log(fuelTempCelsius, "°C");
     console.log(weatherStatus);
 }else{
     console.log("Shut down the launch operations");

@@ -17,7 +17,7 @@
 // *Exercise #2: 
 // Initialize two variables to hold the string “LaunchCode” and the array [1, 5, ‘LC101’, ‘blue’, 42].
 let myString = "LaunchCode";
-let myArray = [1, 5, 'LC101', 'blue', 42];
+let arr = [1, 5, 'LC101', 'blue', 42];
 
 // Construct ``for`` loops to accomplish the following tasks:
   // a. Print each element of the array to a new line.

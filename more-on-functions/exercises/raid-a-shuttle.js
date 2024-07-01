@@ -18,7 +18,7 @@ function holdStatus(arr){
   }
 }
 
-let fuelLevel = 200000;
+let fuelLevel = 60000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
 console.log("Fuel level: " + checkFuel(fuelLevel));
@@ -35,6 +35,16 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //d). Decide where to best place your function call to gather our new fuel.
 
+let siphonFuel = function(fuelLevel) {
+  if (fuelLevel > 100000) {
+     return fuelLevel - 100001; 
+  } else if (fuelLevel > 50000) {
+     return fuelLevel - 50001; 
+  } else {
+     return fuelLevel; 
+  }
+};
+
 /* Next, liberate some of that glorious cargo.
  */
 
@@ -46,6 +56,18 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //d). Don’t get hasty, matey! Remember to test your function.
 
+let stealCargo = function(cargoHold) {
+
+  let stolenItems = cargoHold.splice(0, 2); 
+
+  while (stolenItems.length < 2) {
+     stolenItems.push('empty container');
+  }
+  return stolenItems;
+};
+
+
+
 /* Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.
  */
  
@@ -54,3 +76,13 @@ console.log("Hold status: " + holdStatus(cargoHold));
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
+
+function irs(fuelLevel, cargoHold) {
+  // Call the anonymous functions to siphon fuel and steal cargo
+  let newFuelLevel = siphonFuel(fuelLevel);
+  let stolenItems = stealCargo(cargoHold);
+  
+  return `Raided ${fuelLevel - newFuelLevel} kg of fuel from the tanks, and stole ${stolenItems[0]} and ${stolenItems[1]} from the cargo hold.`;
+}
+
+console.log(irs(fuelLevel, cargoHold));
